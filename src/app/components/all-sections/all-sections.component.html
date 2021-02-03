@@ -1,0 +1,450 @@
+<!-- Start Slider -->
+<section id="mu-slider">
+    <!-- Start single slider item -->
+    <ngx-slick-carousel [config]="slideConfig"  class="carousel" #slickModal="slick-carousel"   (init)="slickInit($event)"
+      >
+      <div ngxSlickItem *ngFor="let slide of slides" class="mu-slider-single slide">
+        <div class="mu-slider-img">
+          <figure>
+            <img src="{{slide.imgPath}}" alt="img">
+          </figure>
+        </div>
+        <div class="mu-slider-content">
+          <h4>{{slide.imgHeader}}</h4>
+          <span></span>
+          <h2>{{slide.imgSubHeader}}</h2>
+          <p>{{slide.content}}</p>
+        </div>
+      </div>
+      
+    </ngx-slick-carousel>
+    
+    <!-- Start single slider item -->    
+</section>
+<section id="mu-service">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="mu-service-area">
+            <!-- Start single service -->
+            <div class="mu-service-single">
+                <span class="fa fa-book"></span>
+                <h3>Best Leadership</h3>
+                <p>Leaders have a clear vision to make the education, not a business but a right</p>
+            </div>
+            <!-- Start single service -->
+            <!-- Start single service -->
+            <div class="mu-service-single">
+                <span class="fa fa-users"></span>
+                <h3>Expert Teachers</h3>
+                <p>Expeienced Faculties having wide range of skills apart from their specialities</p>
+            </div>
+            <!-- Start single service -->
+            <!-- Start single service -->
+            <div class="mu-service-single">
+                <span class="fa fa-table"></span>
+                <h3>Best Classrooms</h3>
+                <p>Good Infrastructure, Comfortable classroom, well-equipped labs and computer labs</p>
+            </div>
+            <!-- Start single service -->
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+  <!-- Start about us -->
+  <section id="mu-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-about-us-area">           
+            <div class="row">
+              <div class="col-lg-6 col-md-6">
+                <div class="mu-about-us-left">
+                  <!-- Start Title -->
+                  <div class="mu-title">
+                    <h2>About Us</h2>              
+                  </div>
+                  <!-- End Title -->
+                  <ul>
+                    <li> A clear and shared vision for the school, Staff, students, parents and the community.</li>
+                    <li>A conducive learning environment that encourages students to develop their skills and increase their knowledge.</li>
+                    <li> Skilled and supportive teachers and administrators.</li>
+                    <li>Reliable support staff</li>
+                    <li>A safe learning environment for students</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="mu-about-us-right">                            
+                <a id="mu-abtus-video" href="https://www.youtube.com/embed/nB9qcceeTpY" target="mutube-video">
+                  <img src="assets/img/about-us.jpg" alt="img">
+                </a>                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End about us -->
+
+<!-- Start about us counter -->
+<section id="mu-abtus-counter" >
+
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+            <div class="mu-abtus-counter-area">
+            <div class="row">
+                <!-- Start counter item -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="mu-abtus-counter-single">
+                    <span class="fa fa-book"></span>
+                    <h4 class="counter">28</h4>
+                    <p>Subjects</p>
+                </div>
+                </div>
+                <!-- End counter item -->
+                <!-- Start counter item -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="mu-abtus-counter-single">
+                    <span class="fa fa-users"></span>
+                    <h4 class="counter">500</h4>
+                    <p>Students</p>
+                </div>
+                </div>
+                <!-- End counter item -->
+                <!-- Start counter item -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="mu-abtus-counter-single">
+                    <span class="fa fa-flask"></span>
+                    <h4 class="counter">5</h4>
+                    <p>Modern Lab</p>
+                </div>
+                </div>
+                <!-- End counter item -->
+                <!-- Start counter item -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="mu-abtus-counter-single no-border">
+                    <span class="fa fa-user-secret"></span>
+                    <h4 class="counter">50</h4>
+                    <p>Teachers</p>
+                </div>
+                </div>
+                <!-- End counter item -->
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</section>
+<!-- End about us counter -->
+
+  <!-- Start latest course section -->
+  <section id="mu-latest-courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="mu-latest-courses-area">
+            <!-- Start Title -->
+            <div class="mu-title">
+              <h2>Latest Courses</h2>
+              <p>We provide comprehensive courses for commerce and science through different classroom programs</p>
+            </div>
+            <!-- End Title -->
+            <!-- Start latest course content -->
+            <ngx-slick-carousel [config]="slideConfigCourse" id="mu-latest-course-slide" class="mu-latest-courses-content carousel"  #slickModal="slick-carousel"   (init)="slickInit($event)">
+              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+                <div class="mu-latest-course-single">
+                  <figure class="mu-latest-course-img">
+                    <a href="#"><img src="assets/img/courses/1.jpg" alt="img"></a>
+                    <figcaption class="mu-latest-course-imgcaption">
+                      <a href="#">Science Stream - Board</a>
+                      <span><i class="fa fa-clock-o"></i>2 Years</span>
+                    </figcaption>
+                  </figure>
+                  <div class="mu-latest-course-single-content">
+                    <h4><a href="#">Class Room Programme For Science Stream Board Students</a></h4>
+                    <p>This will cover all the curriculum required for board exams which will help students in clearing the boards with flying colours</p>
+                    <div class="mu-latest-course-single-contbottom">
+                      <a class="mu-course-details" href="#">Details</a>
+                      <span class="mu-course-price" href="#">1,30,000/- + GST</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+                <div class="mu-latest-course-single">
+                  <figure class="mu-latest-course-img">
+                    <a href="#"><img src="assets/img/courses/2.jpg" alt="img"></a>
+                    <figcaption class="mu-latest-course-imgcaption">
+                      <a href="#">Science Stream - JEE </a>
+                      <span><i class="fa fa-clock-o"></i>2 Years</span>
+                    </figcaption>
+                  </figure>
+                  <div class="mu-latest-course-single-content">
+                    <h4><a href="#">Class Room Programme For Science Stream JEE Students</a></h4>
+                    <p>This will cover all the important conecpts, tricks and method for the competitive based question of the JEE</p>
+                    <div class="mu-latest-course-single-contbottom">
+                      <a class="mu-course-details" href="#">Details</a>
+                      <span class="mu-course-price" href="#">1,30,000/- + GST</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+                <div class="mu-latest-course-single">
+                  <figure class="mu-latest-course-img">
+                    <a href="#"><img src="assets/img/courses/3.jpg" alt="img"></a>
+                    <figcaption class="mu-latest-course-imgcaption">
+                      <a href="#">Science Stream - Medical</a>
+                      <span><i class="fa fa-clock-o"></i>2 Years</span>
+                    </figcaption>
+                  </figure>
+                  <div class="mu-latest-course-single-content">
+                    <h4><a href="#">Class Room Programme For Science Stream Medical Students</a></h4>
+                    <p>This will cover all the important conecpts, tricks and method for the competitive based question of the Medical Exam</p>
+                    <div class="mu-latest-course-single-contbottom">
+                      <a class="mu-course-details" href="#">Details</a>
+                      <span class="mu-course-price" href="#">1,30,000/- + GST</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+                <div class="mu-latest-course-single">
+                  <figure class="mu-latest-course-img">
+                    <a href="#"><img src="assets/img/courses/4.jpg" alt="img"></a>
+                    <figcaption class="mu-latest-course-imgcaption">
+                      <a href="#">Commerce - CA Foundation</a>
+                      <span><i class="fa fa-clock-o"></i>2 Years</span>
+                    </figcaption>
+                  </figure>
+                  <div class="mu-latest-course-single-content">
+                    <h4><a href="#">Class Room Programme For Commerce Stream CA Foundation</a></h4>
+                    <p>This will cover all the important conecpts, tricks and method for the competitive based question of the CA Foundation Exam</p>
+                    <div class="mu-latest-course-single-contbottom">
+                      <a class="mu-course-details" href="#">Details</a>
+                      <span class="mu-course-price" href="#">1,10,000/- + GST</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+                <div class="mu-latest-course-single">
+                  <figure class="mu-latest-course-img">
+                    <a href="#"><img src="assets/img/courses/4.jpg" alt="img"></a>
+                    <figcaption class="mu-latest-course-imgcaption">
+                      <a href="#">Commerce - CS Foundation</a>
+                      <span><i class="fa fa-clock-o"></i>2 Years</span>
+                    </figcaption>
+                  </figure>
+                  <div class="mu-latest-course-single-content">
+                    <h4><a href="#">Class Room Programme For Commerce Stream CS Foundation</a></h4>
+                    <p>This will cover all the important conecpts, tricks and method for the competitive based question of the CS Foundation Exam</p>
+                    <div class="mu-latest-course-single-contbottom">
+                      <a class="mu-course-details" href="#">Details</a>
+                      <span class="mu-course-price" href="#">1,10,000/- + GST</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+                <div class="mu-latest-course-single">
+                  <figure class="mu-latest-course-img">
+                    <a href="#"><img src="assets/img/courses/5.jpg" alt="img"></a>
+                    <figcaption class="mu-latest-course-imgcaption">
+                      <a href="#">Commerce - CLAT</a>
+                      <span><i class="fa fa-clock-o"></i>2 Years</span>
+                    </figcaption>
+                  </figure>
+                  <div class="mu-latest-course-single-content">
+                    <h4><a href="#">Class Room Programme For Commerce Stream CLAT</a></h4>
+                    <p>This will cover all the important conecpts, tricks and method for the competitive based question of the CLAT Exam</p>
+                    <div class="mu-latest-course-single-contbottom">
+                      <a class="mu-course-details" href="#">Details</a>
+                      <span class="mu-course-price" href="#">1,10,000/- + GST</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ngx-slick-carousel>
+            <!-- End latest course content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End latest course section -->
+
+
+<!-- Start our teacher -->
+<section id="mu-our-teacher">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+            <div class="mu-our-teacher-area">
+            <!-- begain title -->
+            <div class="mu-title">
+                <h2>Our Teachers</h2>
+                <p>We have wide range of faculties who believes that learning is the byproduct of constant interaction</p>
+            </div>
+            <!-- end title -->
+            <!-- begain our teacher content -->
+            <div class="mu-our-teacher-content">
+                <div class="row">
+                <div class="col-lg-3 col-md-3  col-sm-6">
+                    <div class="mu-our-teacher-single">
+                    <figure class="mu-our-teacher-img">
+                        <img src="assets/img/teachers/teacher-01.jpg" alt="teacher img">
+                        <div class="mu-our-teacher-social">
+                        <a href="#"><span class="fa fa-facebook"></span></a>
+                        <a href="#"><span class="fa fa-twitter"></span></a>
+                        <a href="#"><span class="fa fa-linkedin"></span></a>
+                        <a href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+                    </figure>                    
+                    <div class="mu-ourteacher-single-content">
+                        <h4>Pankaj Tondon</h4>
+                        <span>Chief patron, HOD Commerce</span>
+                        <p>A Gold medalist having 35 years of experience as Prinicipal and practice accounting and business law</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="mu-our-teacher-single">
+                    <figure class="mu-our-teacher-img">
+                        <img src="assets/img/teachers/teacher-02.jpg" alt="teacher img">
+                        <div class="mu-our-teacher-social">
+                        <a href="#"><span class="fa fa-facebook"></span></a>
+                        <a href="#"><span class="fa fa-twitter"></span></a>
+                        <a href="#"><span class="fa fa-linkedin"></span></a>
+                        <a href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+                    </figure>                    
+                    <div class="mu-ourteacher-single-content">
+                        <h4>RK Pandey</h4>
+                        <span>Business Coresspondence and Reporting</span>
+                        <p>MA, B.ed and has 25 years of rich experience in teaching commerce students</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="mu-our-teacher-single">
+                    <figure class="mu-our-teacher-img">
+                        <img src="assets/img/teachers/teacher-03.jpg" alt="teacher img">
+                        <div class="mu-our-teacher-social">
+                        <a href="#"><span class="fa fa-facebook"></span></a>
+                        <a href="#"><span class="fa fa-twitter"></span></a>
+                        <a href="#"><span class="fa fa-linkedin"></span></a>
+                        <a href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+                    </figure>                    
+                    <div class="mu-ourteacher-single-content">
+                        <h4>Santosh Mishra</h4>
+                        <span>Faculty of Economics</span>
+                        <p>M.A. in Economics, M.B.A in Finance, Ex-Faculty UEM Kolkata, 8 years of tecahing experience in all sector of academics</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="mu-our-teacher-single">
+                    <figure class="mu-our-teacher-img">
+                        <img src="assets/img/teachers/teacher-04.jpg" alt="teacher img">
+                        <div class="mu-our-teacher-social">
+                        <a href="#"><span class="fa fa-facebook"></span></a>
+                        <a href="#"><span class="fa fa-twitter"></span></a>
+                        <a href="#"><span class="fa fa-linkedin"></span></a>
+                        <a href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+                    </figure>                    
+                    <div class="mu-ourteacher-single-content">
+                        <h4>Zeba Parveen</h4>
+                        <span>Statistics and Math Teacher</span>
+                        <p>A B.H.U alumni having 8 years of rich exprience in teaching maths and Statistics</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div> 
+            <!-- End our teacher content -->           
+            </div>
+        </div>
+        </div>
+    </div>
+    <div style="text-align: center;
+    margin-top: 20px;">
+      <button class="moreTeacherButton"> More </button>
+    </div>
+</section>
+<!-- End our teacher -->
+
+<!-- Start testimonial -->
+<section id="mu-testimonial">
+<div class="container">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="mu-testimonial-area">
+          <ngx-slick-carousel [config]="slideConfig" id="mu-testimonial-slide" class="mu-testimonial-content carousel"
+             #slickModal="slick-carousel"   (init)="slickInit($event)"
+      >
+            <!-- start testimonial single item -->
+            <div ngxSlickItem class="mu-testimonial-item slide">
+            <div class="mu-testimonial-quote">
+                <blockquote>
+                <p>It is my immense luck and fortune to be the part of Mount Xavier where I can grow. The entire faculty and department leaves no stone unturned to shape one's future.</p>
+                </blockquote>
+            </div>
+            <div class="mu-testimonial-img">
+                <img src="assets/img/testimonial/testimonial-1.PNG" alt="img">
+            </div>
+            <div class="mu-testimonial-info">
+                <h4>Supriya Verma</h4>
+                <span>Happy Student</span>
+            </div>
+            </div>
+            <!-- end testimonial single item -->
+            <!-- start testimonial single item -->
+            <div ngxSlickItem class="mu-testimonial-item slide">
+            <div class="mu-testimonial-quote">
+                <blockquote>
+                <p>This school is amazing! Every teacher and staff member I met have been beyond amazing. I would definitely recommend Mount Xavier School</p>
+                </blockquote>
+            </div>
+            <div class="mu-testimonial-img">
+                <img src="assets/img/testimonial/testimonial-3.PNG" alt="img">
+            </div>
+            <div class="mu-testimonial-info">
+                <h4>Anonymous</h4>
+                <span>Happy Parent</span>
+            </div>
+            </div>
+            <!-- end testimonial single item -->
+            <!-- start testimonial single item -->
+            <div ngxSlickItem class="mu-testimonial-item slide">
+            <div class="mu-testimonial-quote">
+                <blockquote>
+                <p>Mount Xavier has been a great contributor to the development of my personality. I have established my leadership, time management and team skills and have also been able to advance these skills to the whole new augment level.</p>
+                </blockquote>
+            </div>
+            <div class="mu-testimonial-img">
+                <img src="assets/img/testimonial/testimonial-2.PNG" alt="img">
+            </div>
+            <div class="mu-testimonial-info">
+                <h4>Swyam Akshat</h4>
+                <span>Happy Student</span>
+            </div>
+            </div>
+            <!-- end testimonial single item -->
+        </ngx-slick-carousel>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+<!-- End testimonial -->
+
+
