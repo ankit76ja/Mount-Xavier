@@ -52,6 +52,7 @@
         </div>
     </div>
 </section>
+
   <!-- Start about us -->
   <section id="mu-about-us">
     <div class="container">
@@ -93,7 +94,8 @@
 <!-- Start about us counter -->
 <section id="mu-abtus-counter" >
 
-    <div class="container">
+    <div class="container" style="background-color: rgba(33, 35, 49, 0.9); padding: 60px 0;
+    width: 100%;">
         <div class="row">
         <div class="col-md-12">
             <div class="mu-abtus-counter-area">
@@ -143,6 +145,68 @@
 </section>
 <!-- End about us counter -->
 
+ <!-- End latest course section -->
+ <section id="mu-our-leader">
+  <div class="mu-title">
+    <h2>Leadership Message</h2>
+  </div>
+  <div class="container">
+      <div class="row mu-leaders-box" style="margin: 60px 0;">
+        <div class="col-md-3 col-sm-12">
+          <div class="card">
+            <img src="assets/img/leaders/leader-01.JPG" alt="img">
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <div class="card">
+            <blockquote>
+              <p>Schooling is our primary contact with the world. The value of the true educational institution does not 
+                lies only in the wide classroom and spaces it has, but also the morals, etiquettes and discpline. According 
+                to analysts, the youth of the students are more prone to mental pressure due to the ongoing educational trends
+                of our country where the marks of the student and weight of the school bag decide their future. The motto of
+                our student is the multi-sectoral development of students to achieve zenith in his career.
+                </p>
+                <footer style="color: white; font-size: medium;"> Sumit Salampuria <cite>Director</cite></footer>
+              </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="row mu-leaders-box" style="margin: 60px 0;">
+        <div class="col-md-3 col-sm-12">
+          <div class="card">
+            <img src="assets/img/leaders/leader-02.JPG" alt="img">
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <div class="card">
+            <blockquote>
+              <p>Learning is not a process limited to schools and collegesonly, not does it end with conclusion of one's
+                school career. It is indeed a lifelong process. Mt. Xavier's School is oriented to the basic formation of 
+                child and to adaptions of various methods suiting the dynamics of changing world in order to achieve common 
+                goals and objectives. It is further characterized by shared vision, responsibility and above all, love and 
+                faith in god in order to achieve the goal
+                </p>
+                <footer style="color: white; font-size: medium;"> Manvendra Shukla <cite>Chairperson</cite></footer>
+              </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="row mu-leaders-box" style="margin: 60px 0;">
+        <div class="col-md-3 col-sm-12">
+          <div class="card">
+            <img src="assets/img/teachers/teacher-01.jpg" alt="img">
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <div class="card">
+            <blockquote>
+              <p>It is my immense luck and fortune to be the part of Mount Xavier where I can grow. The entire faculty and department leaves no stone unturned to shape one's future.</p>
+              </blockquote>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
   <!-- Start latest course section -->
   <section id="mu-latest-courses">
     <div class="container">
@@ -156,8 +220,8 @@
             </div>
             <!-- End Title -->
             <!-- Start latest course content -->
-            <ngx-slick-carousel [config]="slideConfigCourse" id="mu-latest-course-slide" class="mu-latest-courses-content carousel"  #slickModal="slick-carousel"   (init)="slickInit($event)">
-              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+            <ngx-slick-carousel [config]="slideConfigCourse" id="mu-latest-course-slide"  class="mu-latest-courses-content carousel"  #slickModal="slick-carousel"   (init)="slickInit($event)">
+              <div ngxSlickItem class="col-lg-4 col-md-12 col-xs-12 slide" >
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
                     <a href="#"><img src="assets/img/courses/1.jpg" alt="img"></a>
@@ -176,7 +240,7 @@
                   </div>
                 </div>
               </div>
-              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+              <div ngxSlickItem class="col-lg-4 col-md-12 col-xs-12 slide">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
                     <a href="#"><img src="assets/img/courses/2.jpg" alt="img"></a>
@@ -187,7 +251,7 @@
                   </figure>
                   <div class="mu-latest-course-single-content">
                     <h4><a href="#">Class Room Programme For Science Stream JEE Students</a></h4>
-                    <p>This will cover all the important conecpts, tricks and method for the competitive based question of the JEE</p>
+                    <p>This will cover all the important conecpts, tricks and method for the competitive based question of the JEE Exam</p>
                     <div class="mu-latest-course-single-contbottom">
                       <a class="mu-course-details" href="#">Details</a>
                       <span class="mu-course-price" href="#">1,30,000/- + GST</span>
@@ -195,7 +259,7 @@
                   </div>
                 </div>
               </div>
-              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+              <div ngxSlickItem class="col-lg-4 col-md-12 col-xs-12 slide">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
                     <a href="#"><img src="assets/img/courses/3.jpg" alt="img"></a>
@@ -214,7 +278,7 @@
                   </div>
                 </div>
               </div>
-              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+              <div ngxSlickItem class="col-lg-4 col-md-12 col-xs-12 slide">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
                     <a href="#"><img src="assets/img/courses/4.jpg" alt="img"></a>
@@ -233,7 +297,7 @@
                   </div>
                 </div>
               </div>
-              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+              <div ngxSlickItem class="col-lg-4 col-md-12 col-xs-12 slide">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
                     <a href="#"><img src="assets/img/courses/4.jpg" alt="img"></a>
@@ -252,7 +316,7 @@
                   </div>
                 </div>
               </div>
-              <div ngxSlickItem class="col-lg-4 col-md-4 col-xs-12 slide">
+              <div ngxSlickItem class="col-lg-4 col-md-12 col-xs-12 slide">
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">
                     <a href="#"><img src="assets/img/courses/5.jpg" alt="img"></a>
@@ -278,8 +342,7 @@
       </div>
     </div>
   </section>
-  <!-- End latest course section -->
-
+ 
 
 <!-- Start our teacher -->
 <section id="mu-our-teacher">

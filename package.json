@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@fancyapps/fancybox": "^3.5.7",
+    "@types/googlemaps": "^3.43.2",
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.5.0",
     "jquery": "^1.11.0",

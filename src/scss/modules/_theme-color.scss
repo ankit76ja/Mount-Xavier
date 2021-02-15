@@ -51,8 +51,9 @@
 				& > a{
 					&:hover,
 					&:focus{
-						border-color: $theme-color;
-						color: $theme-color;
+						background-color: $theme-color;
+						color: white;
+						border-bottom: 2px solid #659DBD;
 					}
 				}						
 				.dropdown-menu {
@@ -80,10 +81,16 @@
 }
 
 
-#mu-menu .navbar-default .navbar-nav > .active > a, #mu-menu .navbar-default .navbar-nav > .active > a:hover, #mu-menu .navbar-default .navbar-nav > .active > a:focus {  
+#mu-menu .navbar-default .navbar-nav > .active > a {  
   color: $theme-color;
   border-bottom: 2px solid $theme-color;
   background-color: transparent;
+}
+
+#mu-menu .navbar-default .navbar-nav > .active > a:hover, #mu-menu .navbar-default .navbar-nav > .active > a:focus {
+	color: white;
+  	border-bottom: 2px solid #659DBD;
+  	background-color: $theme-color;
 }
 #mu-search{	
 	.mu-search-area{
