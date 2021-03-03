@@ -132,6 +132,11 @@
 	#mu-menu .navbar-header .navbar-brand {	 
 	  padding-top: 10px;	  
 	}
+	#mu-menu .navbar-header .navbar-brand span{  
+		position: absolute;
+		font-size: 15px;
+		padding-top: 10px;
+	}
 	#mu-search-icon{
 		display: none;
 	}

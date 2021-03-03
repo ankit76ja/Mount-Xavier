@@ -153,18 +153,18 @@
   <div class="container">
       <div class="row mu-leaders-box" style="margin: 60px 0;">
         <div class="col-md-3 col-sm-12">
-          <div class="card">
-            <img src="assets/img/leaders/leader-01.JPG" alt="img">
+          <div class="card" style="text-align: center; margin: 4px;">
+            <img src="assets/img/leaders/leader-01.JPG" alt="img" class="avatar">
           </div>
         </div>
         <div class="col-md-9 col-sm-12">
-          <div class="card">
+          <div class="card" style="padding-top: 10px;">
             <blockquote>
               <p>Schooling is our primary contact with the world. The value of the true educational institution does not 
                 lies only in the wide classroom and spaces it has, but also the morals, etiquettes and discpline. According 
-                to analysts, the youth of the students are more prone to mental pressure due to the ongoing educational trends
+                to analysts, the youth phase of of the students are more prone to mental pressure due to the ongoing educational trends
                 of our country where the marks of the student and weight of the school bag decide their future. The motto of
-                our student is the multi-sectoral development of students to achieve zenith in his career.
+                our student is the multi-sectoral development of students to achieve zenith in their career.
                 </p>
                 <footer style="color: white; font-size: medium;"> Sumit Salampuria <cite>Director</cite></footer>
               </blockquote>
@@ -173,14 +173,14 @@
       </div>
       <div class="row mu-leaders-box" style="margin: 60px 0;">
         <div class="col-md-3 col-sm-12">
-          <div class="card">
-            <img src="assets/img/leaders/leader-02.JPG" alt="img">
+          <div class="card" style="text-align: center;margin: 4px;">
+            <img src="assets/img/leaders/leader-02.JPG" alt="img" class="avatar">
           </div>
         </div>
         <div class="col-md-9 col-sm-12">
-          <div class="card">
+          <div class="card" style="padding-top: 10px;">
             <blockquote>
-              <p>Learning is not a process limited to schools and collegesonly, not does it end with conclusion of one's
+              <p>Learning is not a process limited to schools and colleges only, nor does it end with conclusion of one's
                 school career. It is indeed a lifelong process. Mt. Xavier's School is oriented to the basic formation of 
                 child and to adaptions of various methods suiting the dynamics of changing world in order to achieve common 
                 goals and objectives. It is further characterized by shared vision, responsibility and above all, love and 
@@ -192,15 +192,24 @@
         </div>
       </div>
       <div class="row mu-leaders-box" style="margin: 60px 0;">
-        <div class="col-md-3 col-sm-12">
-          <div class="card">
-            <img src="assets/img/teachers/teacher-01.jpg" alt="img">
+        <div class="col-md-3 col-sm-12" >
+          <div class="card" style="text-align: center;margin: 4px;">
+            <img src="assets/img/leaders/abhishek.jpg" alt="img" class="avatar">
           </div>
         </div>
         <div class="col-md-9 col-sm-12">
-          <div class="card">
+          <div class="card" style="padding-top: 10px;">
             <blockquote>
-              <p>It is my immense luck and fortune to be the part of Mount Xavier where I can grow. The entire faculty and department leaves no stone unturned to shape one's future.</p>
+              <p>Dear Students, it is my message to you all that the people of fine character live by therir values.
+                They are honest and committed to truthfulness in thought, words and deed. True character thus encompasses 
+                the capacity for self discipline. Character creates self-respect which in-turn leads to high self-esteem. 
+                Maturity is reflected in all aspects of character - the decisions we make, the friends we chooseand the 
+                responsibilities we accept. Always remember to uphold the dignity of people. We are always ready to give 
+                preference to other. What you are is God's gift to you. What you become is your gift to God. Have something
+                to live for. Bring out the best in you
+              </p>
+              <footer style="color: white; font-size: medium;"> Abhishek Sharma <cite>Founder Director</cite></footer>
+
               </blockquote>
           </div>
         </div>
@@ -220,7 +229,7 @@
             </div>
             <!-- End Title -->
             <!-- Start latest course content -->
-            <ngx-slick-carousel [config]="slideConfigCourse" id="mu-latest-course-slide"  class="mu-latest-courses-content carousel"  #slickModal="slick-carousel"   (init)="slickInit($event)">
+            <ngx-slick-carousel [config]="isMobile ?slideConfig: slideConfigCourse" id="mu-latest-course-slide"  class="mu-latest-courses-content carousel"  #slickModal="slick-carousel"   (init)="slickInit($event)">
               <div ngxSlickItem class="col-lg-4 col-md-12 col-xs-12 slide" >
                 <div class="mu-latest-course-single">
                   <figure class="mu-latest-course-img">

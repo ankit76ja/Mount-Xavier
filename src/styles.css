@@ -2561,3 +2561,9 @@ body {
     font-style: italic;
   }
     
+ .card .avatar {
+    vertical-align: middle;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+  }

@@ -1,12 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-all-sections',
   templateUrl: './all-sections.component.html',
-  styleUrls: ['./all-sections.component.scss']
+  styleUrls: ['./all-sections.component.scss'],
+  host: {
+    "(window:resize)":"onWindowResize($event)"
+  }
 })
 export class AllSectionsComponent implements OnInit {
 
+  isMobile: boolean = false;
+  width:number = window.innerWidth;
+  height:number = window.innerHeight;
+  mobileWidth:number  = 585;
   slides=[{
     imgPath:'assets/img/slider/1.jpg',
     imgHeader:'Welcome To Mount Xaviers +2 School',
@@ -40,7 +50,17 @@ export class AllSectionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.isMobile)
+    this.isMobile = this.width < this.mobileWidth;
   }
+
+
+  onWindowResize(event) {
+    this.width = event.target.innerWidth;
+    this.height = event.target.innerHeight;
+    this.isMobile = this.width < this.mobileWidth;
+}
+
   slickInit(e) { 
     console.log('slick initialized',e);
   }

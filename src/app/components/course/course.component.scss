@@ -1,0 +1,18 @@
+.course-tile{
+    background-color: #01bafd !important;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    margin-bottom:30px;
+    // padding-top: 4px !important;
+    // padding-right: 4px !important;
+    // padding-left: 4px !important;
+    height: 440px;
+}
+.course-tile:hover{
+    transform: scale(1.005);
+  }
+.course-tile .mu-latest-course-single-content .mu-latest-course-single-contbottom .mu-course-details{
+    color: white !important;
+}
+

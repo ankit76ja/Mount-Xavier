@@ -10,6 +10,8 @@ import { AllSectionsComponent } from './components/all-sections/all-sections.com
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { CourseComponent } from './components/course/course.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ContactusComponent } from './components/contactus/contactus.component';
     FooterComponent,
     AllSectionsComponent,
     GalleryComponent,
-    ContactusComponent
+    ContactusComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

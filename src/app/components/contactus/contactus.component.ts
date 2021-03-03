@@ -54,6 +54,8 @@ export class ContactusComponent implements AfterViewInit {
       });
     this.marker.setMap(this.map);
   }
-  
+  onSubmit(contactForm){
+    console.log(contactForm.value);
+  }
 
 }
