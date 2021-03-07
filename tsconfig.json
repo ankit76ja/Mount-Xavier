@@ -1,3 +1,4 @@
+
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -9,6 +10,7 @@
     "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "importHelpers": true,
     "target": "es2015",
     "typeRoots": [

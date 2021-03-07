@@ -1,0 +1,18 @@
+<div class="container">
+    
+    <form (ngSubmit) = "onSubmit(loginForm)" #loginForm="ngForm">
+        <h2 class="form-header">Mount Xavier Admin Page</h2>
+        <div class="form-group">
+            <label for="userId">Username</label>
+            <input type="text" class="form-control" name="userId" ngModel #userId="ngModel" required>
+            <span class="error" *ngIf="!userId.valid && userId.touched">Please enter a username</span>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" name="password" ngModel #password="ngModel" required>
+            <span class="error" *ngIf="!password.valid && password.touched">Please enter a password</span>
+        </div>
+        <button class="btn btn-primary" [disabled]="!loginForm.valid" type="submit">Submit</button>
+    </form>
+</div>

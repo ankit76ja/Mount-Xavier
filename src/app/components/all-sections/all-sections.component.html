@@ -3,7 +3,7 @@
     <!-- Start single slider item -->
     <ngx-slick-carousel [config]="slideConfig"  class="carousel" #slickModal="slick-carousel"   (init)="slickInit($event)"
       >
-      <div ngxSlickItem *ngFor="let slide of slides" class="mu-slider-single slide">
+      <div ngxSlickItem *ngFor="let slide of carousels" class="mu-slider-single slide">
         <div class="mu-slider-img">
           <figure>
             <img src="{{slide.imgPath}}" alt="img">
@@ -12,7 +12,7 @@
         <div class="mu-slider-content">
           <h4>{{slide.imgHeader}}</h4>
           <span></span>
-          <h2>{{slide.imgSubHeader}}</h2>
+          <h2>{{slide.imgSubheader}}</h2>
           <p>{{slide.content}}</p>
         </div>
       </div>

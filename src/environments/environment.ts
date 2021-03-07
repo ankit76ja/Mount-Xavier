@@ -1,9 +1,22 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 
+import  firebase from "firebase";
+
+// The list of file replacements can be found in `angular.json`.
 export const environment = {
-  production: false
+  production: false,
+  firebase:{
+    apiKey: "AIzaSyB8E43HRMp46hdQNhDwP4lFEso2CeRjAkU",
+    authDomain: "mount-xavier-ui-16fd8.firebaseapp.com",
+    projectId: "mount-xavier-ui-16fd8",
+    storageBucket: "mount-xavier-ui-16fd8.appspot.com",
+    messagingSenderId: "378436192370",
+    appId: "1:378436192370:web:a5af5d3db9341981989aeb",
+    measurementId: "G-F00C8F2WPZ"
+  },
+  getCarousel:'http://localhost:3000/getAllCarousel',
+  login:'http://localhost:3000/login'
 };
 
 /*

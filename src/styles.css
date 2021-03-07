@@ -29,7 +29,7 @@
 #FOOTER SECTION
 #RESPONSIVE DESIGN
 */
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* BASE - Base tyles, Variables, Mixins, etc. */
 body {
     background-color: #ffffff;
