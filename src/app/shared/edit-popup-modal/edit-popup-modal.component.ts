@@ -30,8 +30,9 @@ export class EditPopupModalComponent implements OnInit {
 
   async onSubmit(entityForm:NgForm){
     console.log(entityForm.value);
-
-    const filePath = entityForm.value.imgName;  // path at which image will be stored in the firebase storage
+    const fPath ='C:/Users/M1054636/Desktop/'
+    
+    const filePath = fPath + this.file.name;  // path at which image will be stored in the firebase storage
     this.task =  this.fireStorage.upload(filePath, this.file);    // upload task
 
     // this.progress = this.snapTask.percentageChanges();
