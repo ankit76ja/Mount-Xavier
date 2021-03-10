@@ -27,6 +27,7 @@ import { EditPopupModalComponent } from './shared/edit-popup-modal/edit-popup-mo
 import { AngularFireModule } from '@angular/fire';                      // For setup
 import { AngularFireDatabaseModule } from '@angular/fire/database';   // For database
 import { AngularFirestore } from '@angular/fire/firestore';          // For database --> firestore
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AngularFireStorageModule } from '@angular/fire/storage';   
 import { environment } from 'src/environments/environment';
@@ -58,6 +59,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
     HttpClientModule, 
     MatDialogModule,
     MatIconModule,
+    MatSnackBarModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,                

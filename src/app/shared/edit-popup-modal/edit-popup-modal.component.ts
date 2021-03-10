@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MatSnackBar, MAT_DIALOG_DATA } from '@angular/material';
 import { AngularFireStorage, AngularFireUploadTask  } from '@angular/fire/storage';   //   import <<<<
 import { CarouselService } from 'src/app/services/carousel.service';
 import { carousel } from 'src/app/model/carousel.model';
@@ -27,7 +27,8 @@ export class EditPopupModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data:any,
     private fireStorage: AngularFireStorage,
     private carouselService:CarouselService,
-    private SpinnerService: NgxSpinnerService ) {}
+    private SpinnerService: NgxSpinnerService,
+    private _snackBar: MatSnackBar ) {}
 
     onNoClick(): void {
       this.dialogRef.close();
@@ -64,22 +65,26 @@ export class EditPopupModalComponent implements OnInit {
         this.carousel.carouselId = this.carouselId;
         this.carouselService.updateCarousel(this.carousel).subscribe(data=>{
           console.log('Carousel updated successfully');
-          this.SpinnerService.hide()
+          this.reset(entityForm);
+          this.openSnackBar('Carousel updated successfully','Close')
         },
         error=>{
           console.log('Error');
-          this.SpinnerService.hide();
+          this.reset(entityForm);
+          this.openSnackBar('Error in updating Carousel','Close')
         })
       }
       else if(this.action === 'add'){
         this.carousel['carouselId'] = Array.from(Array(6), () => Math.floor(Math.random() * 36).toString(36)).join('');
         this.carouselService.addCarousel(this.carousel).subscribe(data=>{
           console.log('Carousel saved successfully');
-          this.SpinnerService.hide()
+          this.reset(entityForm);
+          this.openSnackBar('Carousel saved successfully','Close')
         },
         error=>{
           console.log('Error');
-          this.SpinnerService.hide();
+          this.reset(entityForm);
+          this.openSnackBar('Error in saving Carousel','Close')
         })
       }
     });  // <<< url is found here
@@ -88,7 +93,18 @@ export class EditPopupModalComponent implements OnInit {
 
   onFileChanged(event) {
     this.file = event.target.files[0]; 
-    console.log(this.file)
+  }
+  reset(entityForm){
+    entityForm.form.reset();
+    this.SpinnerService.hide();
+    this.onNoClick();
+    this.carouselService.carouselListChanged.next(true);
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
 }

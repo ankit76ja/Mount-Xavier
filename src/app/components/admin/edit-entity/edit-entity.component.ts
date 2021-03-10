@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { CarouselService } from 'src/app/services/carousel.service';
 import { DeleteCellRenderer } from 'src/app/shared/delete-cell-renderer.component';
 import { EditCellRenderer } from 'src/app/shared/edit-cell-renderer.component';
@@ -14,6 +15,7 @@ export class EditEntityComponent implements OnInit {
   //Carousel definitions
   carouselDef:any;
   private carouselGridApi;
+  carouselListChangedSubscription:Subscription;
   private carouselGridColumnApi;
   carouselData:any;
 
@@ -32,13 +34,19 @@ export class EditEntityComponent implements OnInit {
     },
       { headerName: 'Delete', width:100,  cellRendererFramework: DeleteCellRenderer}
     ];
+
+    this.carouselListChangedSubscription = this.carouselService.carouselListChanged.subscribe(res=> {if(res){
+      this.getData()
+    }})
   }
   onCarouselGridReady(params) {
     this.carouselGridApi = params.api;
     this.carouselGridColumnApi = params.columnApi;
     this.carouselGridApi.sizeColumnsToFit();
+    this.getData();
+  }
+  getData(){
     this.carouselService.getAllCarousel().subscribe(res=> this.carouselData = res['content']);
-
   }
   addEntity(type:string){
     switch(type){
@@ -53,5 +61,8 @@ export class EditEntityComponent implements OnInit {
         width: '500px',
         data: {action:'add', entityType:entityType}
       })
+  }
+  onDestroy(){
+    this.carouselListChangedSubscription.unsubscribe();
   }
 }
