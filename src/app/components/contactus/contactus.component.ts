@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-contactus',
@@ -25,7 +27,8 @@ export class ContactusComponent implements AfterViewInit {
   //   map: this.map
   // });
 
-  constructor() { }
+  constructor(private loginService:LoginService,
+            private spinnerService:NgxSpinnerService) { }
 
   // ngOnInit() {
   //   var mapProp = {
@@ -55,7 +58,15 @@ export class ContactusComponent implements AfterViewInit {
     this.marker.setMap(this.map);
   }
   onSubmit(contactForm){
+    this.spinnerService.show()
     console.log(contactForm.value);
+    this.loginService.contactus(contactForm.value).subscribe(res=>{
+      console.log('Message sent');
+      this.spinnerService.hide()
+    },
+    err=>{
+      this.spinnerService.hide()
+    })  
   }
 
 }

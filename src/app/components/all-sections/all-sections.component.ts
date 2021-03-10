@@ -59,12 +59,6 @@ export class AllSectionsComponent implements OnInit {
     this.isMobile = this.width < this.mobileWidth;
     
     this.carousel.getAllCarousel().subscribe(carousels=>{
-      carousels['content'].forEach(carousel=>{
-        this.storageRef = firebase.storage().ref().child(carousel['imgName']);
-        this.storageRef.getDownloadURL().then(url => {
-         carousel['imgPath'] =url
-        });
-      })
       this.carousels = carousels['content'];
       console.log(this.carousels);
     })
@@ -82,14 +76,5 @@ export class AllSectionsComponent implements OnInit {
   slickInit(e) { 
     console.log('slick initialized',e);
   }
-  
- getImageURL(imgName){
-  let imgUrl;
-  this.storageRef = firebase.storage().ref().child(imgName);
-  this.storageRef.getDownloadURL().then(url => {
-    imgUrl = url
-    return imgUrl;
-  });
- }
 
 }

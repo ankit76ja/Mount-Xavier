@@ -16,6 +16,11 @@ export const environment = {
     measurementId: "G-F00C8F2WPZ"
   },
   getCarousel:'http://localhost:3000/getAllCarousel',
+  addCarousel: 'http://localhost:3000/addCarousel',
+  getCarouselById: 'http://localhost:3000/getCarousel/',
+  updateCarousel: 'http://localhost:3000/updateCarousel/',
+  deleteCarousel:'http://localhost:3000/deleteCarousel/',
+  contactus:'http://localhost:3000/contactus',
   login:'http://localhost:3000/login'
 };
 

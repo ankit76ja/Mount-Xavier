@@ -12,4 +12,8 @@ export class LoginService {
   login(user){
    return this.http.post(environment.login, user)
   }
+
+  contactus(contactDetails){
+    return this.http.post(environment.contactus, contactDetails)
+  }
 }

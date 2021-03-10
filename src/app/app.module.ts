@@ -30,6 +30,8 @@ import { AngularFirestore } from '@angular/fire/firestore';          // For data
 
 import { AngularFireStorageModule } from '@angular/fire/storage';   
 import { environment } from 'src/environments/environment';
+import { DeleteCellRenderer } from './shared/delete-cell-renderer.component';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { environment } from 'src/environments/environment';
     EditEntityComponent,
     DialogComponent,
     EditCellRenderer,
+    DeleteCellRenderer,
     EditPopupModalComponent
   ],
   imports: [
@@ -57,15 +60,15 @@ import { environment } from 'src/environments/environment';
     MatIconModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule  ,                
-
+    AngularFireDatabaseModule,                
     AngularFireStorageModule,  
     AgGridModule.withComponents([]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
-  providers: [CarouselService],
+  providers: [CarouselService,NgxSpinnerService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogComponent,EditCellRenderer,EditPopupModalComponent],
+  entryComponents: [DialogComponent,EditCellRenderer,EditPopupModalComponent,DeleteCellRenderer],
 
 })
 export class AppModule { }

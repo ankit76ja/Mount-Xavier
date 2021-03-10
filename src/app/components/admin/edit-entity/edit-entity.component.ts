@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CarouselService } from 'src/app/services/carousel.service';
+import { DeleteCellRenderer } from 'src/app/shared/delete-cell-renderer.component';
 import { EditCellRenderer } from 'src/app/shared/edit-cell-renderer.component';
 import { EditPopupModalComponent } from 'src/app/shared/edit-popup-modal/edit-popup-modal.component';
 
@@ -27,9 +28,9 @@ export class EditEntityComponent implements OnInit {
       { headerName: 'Header', field: 'imgHeader',resizable:true },
       { headerName: 'Subheader', field: 'imgSubheader',resizable:true },
       { headerName: 'Content', field: 'content',resizable:true },
-      { headerName: 'Edit', width:100,  cellRendererFramework: EditCellRenderer,
+      { headerName: 'Edit', width:100,  cellRendererFramework: EditCellRenderer
     },
-      { headerName: 'Delete', width:100}
+      { headerName: 'Delete', width:100,  cellRendererFramework: DeleteCellRenderer}
     ];
   }
   onCarouselGridReady(params) {
@@ -50,7 +51,7 @@ export class EditEntityComponent implements OnInit {
   openDialog(entityType:string){
       this.dialog.open(EditPopupModalComponent, {
         width: '500px',
-        data: {}
+        data: {action:'add', entityType:entityType}
       })
   }
 }

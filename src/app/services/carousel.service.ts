@@ -13,4 +13,17 @@ import { environment } from "src/environments/environment";
     getAllCarousel(){
         return this.http.get(environment.getCarousel);
     }
+    addCarousel(carousel){
+      return this.http.post(environment.addCarousel,carousel);
+    }
+
+    updateCarousel(carousel){
+      return this.http.put(environment.updateCarousel+ carousel.carouselId,carousel);
+    } 
+    deleteCarousel(carouselId){
+      return this.http.delete(environment.deleteCarousel + carouselId)
+    }
+    getCarouselById(carouselId){
+      return this.http.get(environment.getCarouselById + carouselId)
+    }
   }

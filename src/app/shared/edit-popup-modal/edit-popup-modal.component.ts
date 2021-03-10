@@ -1,7 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AngularFireStorage, AngularFireUploadTask  } from '@angular/fire/storage';   //   import <<<<
+import { CarouselService } from 'src/app/services/carousel.service';
+import { carousel } from 'src/app/model/carousel.model';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -10,15 +13,21 @@ import { AngularFireStorage, AngularFireUploadTask  } from '@angular/fire/storag
   styleUrls: ['./edit-popup-modal.component.scss']
 })
 export class EditPopupModalComponent implements OnInit {
-
+  @ViewChildren('entityForm') entityForm;
+  carousel:carousel;
   task: AngularFireUploadTask;  
   downloadableURL = ''; 
   file:any; 
+  carouselId: any;
+  action:string;
 
   constructor(
+    
     public dialogRef: MatDialogRef<EditPopupModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any,
-    private fireStorage: AngularFireStorage ) {}
+    private fireStorage: AngularFireStorage,
+    private carouselService:CarouselService,
+    private SpinnerService: NgxSpinnerService ) {}
 
     onNoClick(): void {
       this.dialogRef.close();
@@ -26,23 +35,60 @@ export class EditPopupModalComponent implements OnInit {
 
 
   ngOnInit() {
+    this.SpinnerService.show();
+    this.carouselId = this.data['carouselId'];   
+    this.action = this.data.action;
+    this.carouselService.getCarouselById(this.carouselId)
+                        .subscribe(car => {
+                          this.carousel = car['content'][0];
+                          this.SpinnerService.hide();
+                        })
   }
 
   async onSubmit(entityForm:NgForm){
+    this.SpinnerService.show()
     console.log(entityForm.value);
-    const fPath ='C:/Users/M1054636/Desktop/'
     
-    const filePath = fPath + this.file.name;  // path at which image will be stored in the firebase storage
+    
+    const filePath = this.file.name;  // path at which image will be stored in the firebase storage
     this.task =  this.fireStorage.upload(filePath, this.file);    // upload task
 
     // this.progress = this.snapTask.percentageChanges();
 
-    (await this.task).ref.getDownloadURL().then(url => {this.downloadableURL = url; });  // <<< url is found here
+    (await this.task).ref.getDownloadURL().then(url => {
+      this.downloadableURL = url;
+      this.carousel = entityForm.value;
+      this.carousel['imgPath'] = this.downloadableURL;
+      this.carousel['imgName'] = this.carousel['imgName'].split('\\')[this.carousel['imgName'].split('\\').length -1]
+      if(this.action === 'edit'){
+        this.carousel.carouselId = this.carouselId;
+        this.carouselService.updateCarousel(this.carousel).subscribe(data=>{
+          console.log('Carousel updated successfully');
+          this.SpinnerService.hide()
+        },
+        error=>{
+          console.log('Error');
+          this.SpinnerService.hide();
+        })
+      }
+      else if(this.action === 'add'){
+        this.carousel['carouselId'] = Array.from(Array(6), () => Math.floor(Math.random() * 36).toString(36)).join('');
+        this.carouselService.addCarousel(this.carousel).subscribe(data=>{
+          console.log('Carousel saved successfully');
+          this.SpinnerService.hide()
+        },
+        error=>{
+          console.log('Error');
+          this.SpinnerService.hide();
+        })
+      }
+    });  // <<< url is found here
 
   }
 
   onFileChanged(event) {
     this.file = event.target.files[0]; 
+    console.log(this.file)
   }
 
 }
