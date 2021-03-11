@@ -9,6 +9,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { CourseComponent } from './components/course/course.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
     children:[{
       path:'login',component:LoginComponent
     },
-    {path:'editEntity',component:EditEntityComponent}]}  
+    {path:'editEntity',component:EditEntityComponent, canActivate:[AuthGuard]}]}  
 ];
 
 @NgModule({

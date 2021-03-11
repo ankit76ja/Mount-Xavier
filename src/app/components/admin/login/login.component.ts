@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   onSubmit(loginForm:NgForm){
     this.loginService.login(loginForm.value).subscribe(res=>{
       if(res['Success']){
+        this.loginService.isLoggedin.next(true);
         console.log('Logged in Successfully') ;
         this.router.navigate(['mount-xavier','editEntity'])       
       }

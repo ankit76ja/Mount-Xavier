@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,6 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
 
+  isLoggedin = new Subject<boolean>()
   constructor(private http:HttpClient) { }
 
   login(user){
