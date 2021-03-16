@@ -16,5 +16,23 @@ export const environment = {
   updateCarousel: 'https://mount-xavier-services.herokuapp.com/updateCarousel/',
   deleteCarousel:'https://mount-xavier-services.herokuapp.com/deleteCarousel/',
   contactus:'https://mount-xavier-services.herokuapp.com/contactus',
-  login:'https://mount-xavier-services.herokuapp.com/login'
+  login:'https://mount-xavier-services.herokuapp.com/login',
+
+   //Leadership
+   getLeader:'https://mount-xavier-services.herokuapp.com/getAllLeader',
+   addLeader: 'https://mount-xavier-services.herokuapp.com/addLeader',
+   getLeaderById: 'https://mount-xavier-services.herokuapp.com/getLeader/',
+   updateLeader: 'https://mount-xavier-services.herokuapp.com/updateLeader/',
+   deleteLeader:'https://mount-xavier-services.herokuapp.com/deleteLeader/',
+   
+ 
+   //Gallery
+   getPicture:'https://mount-xavier-services.herokuapp.com/getAllPicture',
+   addPicture: 'https://mount-xavier-services.herokuapp.com/addPicture',
+   getPictureById: 'https://mount-xavier-services.herokuapp.com/getPicture/',
+   updatePicture: 'https://mount-xavier-services.herokuapp.com/updatePicture/',
+   deletePicture:'https://mount-xavier-services.herokuapp.com/deletePicture/',
+   getPicturebyType :  'https://mount-xavier-services.herokuapp.com/getPicturebyType/',
+ 
+ 
 };
