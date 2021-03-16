@@ -14,37 +14,33 @@
              <!-- Start gallery menu -->
              <div class="mu-gallery-top">              
                <ul>
-                 <li class="filter active">All</li>
-                 <li class="filter" data-filter=".lab">Lab</li>
-                 <li class="filter" data-filter=".classroom">Class Room</li>
-                 <li class="filter" data-filter=".library">Library</li>
-                 <li class="filter" data-filter=".cafe">Cafe</li>
-                 <li class="filter" data-filter=".others">Others</li>
+                 <li class="filter active" (click)="getAllPictures()">ALL</li>
+                 <li *ngFor="let filter of filterType" class="filter" data-filter=".filter.valueName" (click) = "getPictureByType(filter.valueName)">{{filter.valueName}}</li>
                </ul>
              </div>
              <!-- End gallery menu -->
              <div class="mu-gallery-body">
-               <ul id="mixit-container" class="row">
+               <ul id="mixit-container" class="row" >
                  <!-- start single gallery image -->
-                 <li class="col-md-4 col-sm-6 col-xs-12">
+                 <li class="col-md-4 col-sm-6 col-xs-12" *ngFor="let pic of pictures">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
                        <div class="mu-single-gallery-img">
-                         <a href="#"><img alt="img" src="assets/img/gallery/small/1.jpg"></a>
+                         <a href="#"><img alt="img" src="{{pic.pictureUrl}}"></a>
                        </div>
                        <div class="mu-single-gallery-info">
                          <div class="mu-single-gallery-info-inner">
-                           <h4>Image Title</h4>
-                           <p>Web Design</p>
-                           <a href="assets/img/gallery/big/1.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+                           <h4>{{pic.pictureTitle}}</h4>
+                           <p>{{pic.pictureSubtitle}}</p>
+                           <a href="{{pic.pictureUrl}}"  data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
                            <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
                          </div>
                        </div>                  
                      </div>
                    </div>
                  </li>
-                 <!-- start single gallery image -->
-                <li class="col-md-4 col-sm-6 col-xs-12">
+                
+                <!-- <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
                        <div class="mu-single-gallery-img">
@@ -60,9 +56,8 @@
                        </div> 
                      </div>
                    </div>
-                </li>
-                 <!-- start single gallery image -->
-                 <li class="col-md-4 col-sm-6 col-xs-12">
+                </li> -->
+                 <!-- <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
                        <div class="mu-single-gallery-img">
@@ -79,7 +74,6 @@
                      </div>
                    </div>
                  </li>
-                 <!-- start single gallery image -->
                  <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
@@ -97,7 +91,6 @@
                      </div>
                    </div>
                  </li>
-                 <!-- start single gallery image -->
                  <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
@@ -115,7 +108,6 @@
                      </div>
                    </div>
                  </li>
-                 <!-- start single gallery image -->
                  <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
@@ -133,7 +125,6 @@
                      </div>
                    </div>
                  </li>
-                 <!-- start single gallery image -->
                  <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
@@ -151,7 +142,6 @@
                      </div>
                    </div> 
                  </li>
-                  <!-- start single gallery image -->
                  <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
@@ -169,7 +159,6 @@
                      </div>
                    </div>
                  </li>
-                 <!-- start single gallery image -->
                  <li class="col-md-4 col-sm-6 col-xs-12">
                    <div class="mu-single-gallery">                  
                      <div class="mu-single-gallery-item">
@@ -186,7 +175,7 @@
                        </div>             
                      </div>
                    </div> 
-                 </li>
+                 </li> -->
                </ul>            
              </div>
            </div>

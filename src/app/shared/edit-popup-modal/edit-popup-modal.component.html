@@ -7,11 +7,11 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
             <span aria-hidden="true" (click)="onNoClick()">&times;</span>
         </button>
-        <h2 class="form-header">Add EntityType</h2>
+        <h2 class="form-header">Add {{entity}}</h2>
     </div>
     <div class="modal-body">
         <!-- (ngSubmit) = "onSubmit(entityForm)" -->
-        <form (ngSubmit) = "onSubmit(entityForm)" #entityForm="ngForm" >
+        <form *ngIf="entity === 'carousel'" (ngSubmit) = "onSubmit(entityForm)" #entityForm="ngForm" >
             <div class="form-group">
                 <label for="imgName">Upload Image</label>
                 <input type="file" id="file-id" class="form-control" (input)="onFileChanged($event)" name="imgName" ngModel #imgName="ngModel" required>
@@ -33,6 +33,61 @@
                 <textarea type="text" rows="4" cols="50" class="form-control" name="content" [ngModel]="carousel?.content" #content="ngModel" required></textarea>
                 <span class="error" *ngIf="!content.valid && content.touched">Please enter an Image Content</span>
             </div>
+            <button class="btn btn-primary" [disabled]="!entityForm.valid" type="submit">{{action === 'edit'?'Update':'Submit'}}</button>
+
+        </form>
+        <form *ngIf="entity === 'leader'" (ngSubmit) = "onSubmit(entityForm)" #entityForm="ngForm" >
+            <div class="form-group">
+                <label for="imgName">Upload Image</label>
+                <input type="file" id="file-id" class="form-control" (input)="onFileChanged($event)" name="imgName" ngModel #imgName="ngModel" required>
+                <span class="error" *ngIf="!imgName.valid && imgName.touched">Please add a file</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="leaderName">Leader Name</label>
+                <input type="text" class="form-control" name="leaderName" [ngModel]="leader?.leaderName" #leaderName="ngModel" required>
+                <span class="error" *ngIf="!leaderName.valid && leaderName.touched">Please enter Leader Name</span>
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" name="designation" [ngModel]="leader?.designation" #designation="ngModel" required>
+                <span class="error" *ngIf="!designation.valid && designation.touched">Please enter the designation</span>
+            </div>
+            <div class="form-group">
+                <label for="content">Message</label>
+                <textarea type="text" rows="4" cols="50" class="form-control" name="message" [ngModel]="leader?.message" #message="ngModel" required></textarea>
+                <span class="error" *ngIf="!message.valid && message.touched">Please enter the message</span>
+            </div>
+            <button class="btn btn-primary" [disabled]="!entityForm.valid" type="submit">{{action === 'edit'?'Update':'Submit'}}</button>
+
+        </form>
+        <form *ngIf="entity === 'picture'" (ngSubmit) = "onSubmit(entityForm)" #entityForm="ngForm" >
+            <div class="form-group">
+                <label for="pictureName">Upload Image</label>
+                <input type="file" id="file-id" class="form-control" (input)="onFileChanged($event)" name="pictureName" ngModel #pictureName="ngModel" required>
+                <span class="error" *ngIf="!pictureName.valid && pictureName.touched">Please add a file</span>
+            </div>
+            <div class="form-group">
+                <label for="pictureType">Image Type</label>
+                <mat-select class="form-control" name="pictureType" [ngModel]="picture?.pictureType" #pictureType="ngModel" required>
+                    <mat-option *ngFor="let pictype of pType" [value]="pictype.valueName">
+                      {{pictype.keyName}}
+                    </mat-option>
+                 </mat-select>
+                <span class="error" *ngIf="!pictureType.valid && pictureType.touched">Please select a picture type</span>
+            </div>
+            <div class="form-group">
+                <label for="pictureTitle">Title</label>
+                <input type="text" class="form-control" name="pictureTitle" [ngModel]="picture?.pictureTitle" #pictureTitle="ngModel" required>
+                <span class="error" *ngIf="!pictureTitle.valid && pictureTitle.touched">Please enter the Title</span>
+            </div>
+            <div class="form-group">
+                <label for="pictureSubtitle">Subtitle</label>
+                <input type="text" class="form-control" name="pictureSubtitle" [ngModel]="picture?.pictureSubtitle" #pictureSubtitle="ngModel" required>
+                <span class="error" *ngIf="!pictureSubtitle.valid && pictureSubtitle.touched">Please enter the Subtitle</span>
+            </div>
+            
+
             <button class="btn btn-primary" [disabled]="!entityForm.valid" type="submit">{{action === 'edit'?'Update':'Submit'}}</button>
 
         </form>

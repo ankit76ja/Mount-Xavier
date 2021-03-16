@@ -1,6 +1,9 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import firebase from 'firebase';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { CarouselService } from 'src/app/services/carousel.service';
+import { LeaderService } from 'src/app/services/leader.service';
+import { PictureService } from 'src/app/services/picture.service';
 
 
 
@@ -21,6 +24,8 @@ export class AllSectionsComponent implements OnInit {
   height:number = window.innerHeight;
   mobileWidth:number  = 585;
   carousels:[];
+  leaders:[];
+
   slides=[{
     imgPath:'assets/img/slider/1.jpg',
     imgHeader:'Welcome To Mount Xaviers +2 School',
@@ -52,17 +57,30 @@ export class AllSectionsComponent implements OnInit {
     autoplaySpeed: 2000,
   }
   storageRef: any;
-  constructor(private carousel:CarouselService) { }
+  constructor(private carousel:CarouselService,
+    private spinner:NgxSpinnerService,
+    private leader:LeaderService) { }
 
   ngOnInit() {
     console.log(this.isMobile)
     this.isMobile = this.width < this.mobileWidth;
-    
+    this.spinner.show();
     this.carousel.getAllCarousel().subscribe(carousels=>{
       this.carousels = carousels['content'];
+      this.spinner.hide();
       console.log(this.carousels);
+    },error=>{
+      this.spinner.hide();
     })
-   
+    this.spinner.show();
+    this.leader.getAllLeader().subscribe(leaders=>{
+      this.leaders = leaders['content'];
+      this.spinner.hide();
+      console.log(this.leaders);
+      },error=>{
+        this.spinner.hide();
+    });
+    
     
   }
 

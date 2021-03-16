@@ -1,4 +1,7 @@
 <!-- Start Slider -->
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+  <p style="color: white">Please Wait. </p>  
+</ngx-spinner>  
 <section id="mu-slider">
     <!-- Start single slider item -->
     <ngx-slick-carousel [config]="slideConfig"  class="carousel" #slickModal="slick-carousel"   (init)="slickInit($event)"
@@ -150,8 +153,8 @@
   <div class="mu-title">
     <h2>Leadership Message</h2>
   </div>
-  <div class="container">
-      <div class="row mu-leaders-box" style="margin: 60px 0;">
+  <div class="container" *ngFor="let leader of leaders">
+      <!-- <div class="row mu-leaders-box" style="margin: 60px 0;">
         <div class="col-md-3 col-sm-12">
           <div class="card" style="text-align: center; margin: 4px;">
             <img src="assets/img/leaders/leader-01.JPG" alt="img" class="avatar">
@@ -190,25 +193,19 @@
               </blockquote>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="row mu-leaders-box" style="margin: 60px 0;">
         <div class="col-md-3 col-sm-12" >
           <div class="card" style="text-align: center;margin: 4px;">
-            <img src="assets/img/leaders/abhishek.jpg" alt="img" class="avatar">
+            <img src="{{leader.leaderImageUrl}}" alt="img" class="avatar">
           </div>
         </div>
         <div class="col-md-9 col-sm-12">
           <div class="card" style="padding-top: 10px;">
             <blockquote>
-              <p>Dear Students, it is my message to you all that the people of fine character live by therir values.
-                They are honest and committed to truthfulness in thought, words and deed. True character thus encompasses 
-                the capacity for self discipline. Character creates self-respect which in-turn leads to high self-esteem. 
-                Maturity is reflected in all aspects of character - the decisions we make, the friends we chooseand the 
-                responsibilities we accept. Always remember to uphold the dignity of people. We are always ready to give 
-                preference to other. What you are is God's gift to you. What you become is your gift to God. Have something
-                to live for. Bring out the best in you
+              <p>{{leader.message}}
               </p>
-              <footer style="color: white; font-size: medium;"> Abhishek Sharma <cite>Founder Director</cite></footer>
+              <footer style="color: white; font-size: medium;">{{leader.leaderName}}<cite> {{leader.designation}}</cite></footer>
 
               </blockquote>
           </div>

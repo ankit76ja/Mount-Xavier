@@ -6,7 +6,7 @@ import { EditPopupModalComponent } from './edit-popup-modal/edit-popup-modal.com
 
 @Component({
   selector: 'edit-cell-component',
-  template: `<a  style="cursor: pointer;" (click)="editEntity('carousel',params)"><mat-icon>edit</mat-icon></a>`,
+  template: `<a  style="cursor: pointer;" (click)="editEntity(params.entityType,params)"><mat-icon>edit</mat-icon></a>`,
 })
 export class EditCellRenderer implements AgRendererComponent {
   private displayValue: string;
@@ -24,7 +24,7 @@ export class EditCellRenderer implements AgRendererComponent {
   editEntity(entityType:string,params){
     this.dialog.open(EditPopupModalComponent, {
       width: '500px',
-      data: {'carouselId':params.data.carouselId, action:'edit', entityType:entityType}
+      data: {'carouselId':params.data.carouselId, 'leaderId': params.data.leaderId, 'pictureId': params.data.pictureId, action:'edit', entityType:entityType}
     })
   }
 }

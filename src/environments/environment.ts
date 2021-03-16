@@ -15,13 +15,33 @@ export const environment = {
     appId: "1:378436192370:web:a5af5d3db9341981989aeb",
     measurementId: "G-F00C8F2WPZ"
   },
+
+  //Carousel
   getCarousel:'http://localhost:3000/getAllCarousel',
   addCarousel: 'http://localhost:3000/addCarousel',
   getCarouselById: 'http://localhost:3000/getCarousel/',
   updateCarousel: 'http://localhost:3000/updateCarousel/',
   deleteCarousel:'http://localhost:3000/deleteCarousel/',
+
+  //Leadership
+  getLeader:'http://localhost:3000/getAllLeader',
+  addLeader: 'http://localhost:3000/addLeader',
+  getLeaderById: 'http://localhost:3000/getLeader/',
+  updateLeader: 'http://localhost:3000/updateLeader/',
+  deleteLeader:'http://localhost:3000/deleteLeader/',
+  
+
+  //Gallery
+  getPicture:'http://localhost:3000/getAllPicture',
+  addPicture: 'http://localhost:3000/addPicture',
+  getPictureById: 'http://localhost:3000/getPicture/',
+  updatePicture: 'http://localhost:3000/updatePicture/',
+  deletePicture:'http://localhost:3000/deletePicture/',
+  getPicturebyType :  'http://localhost:3000/getPicturebyType/',
+
+
+  login:'http://localhost:3000/login',
   contactus:'http://localhost:3000/contactus',
-  login:'http://localhost:3000/login'
 };
 
 /*

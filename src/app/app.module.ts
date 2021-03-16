@@ -28,6 +28,7 @@ import { AngularFireModule } from '@angular/fire';                      // For s
 import { AngularFireDatabaseModule } from '@angular/fire/database';   // For database
 import { AngularFirestore } from '@angular/fire/firestore';          // For database --> firestore
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AngularFireStorageModule } from '@angular/fire/storage';   
 import { environment } from 'src/environments/environment';
@@ -61,6 +62,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
     MatIconModule,
     MatSnackBarModule,
     FormsModule,
+    MatSelectModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,                
     AngularFireStorageModule,  
