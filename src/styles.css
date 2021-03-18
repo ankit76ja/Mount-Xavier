@@ -34,9 +34,12 @@
 body {
     background-color: #ffffff;
     font-family: "Roboto", sans-serif;
-    color: #333333;
-    font-size: 16px;
     overflow-x: hidden;
+    background-image: url("./assets/img/background/background-school.png");
+    background-size: cover;
+    font-size: 17px;
+    color: #01BAFD;
+    font-weight: 700;
   }
   
   .no-padding {
@@ -472,6 +475,7 @@ body {
     font-size: 40px;
     margin-bottom: 20px;
     text-align: left;
+    font-weight: 700;
   }
   #mu-about-us .mu-about-us-area .mu-about-us-left ul {
     margin-left: 25px;
@@ -2452,6 +2456,7 @@ body {
     #mu-about-us .mu-about-us-area .mu-about-us-left h2 {
       font-size: 30px;
       margin-bottom: 10px;
+      font-weight: 700;
     }
   
     #mu-testimonial .mu-testimonial-area .mu-testimonial-content .mu-testimonial-item .mu-testimonial-quote {
@@ -2531,7 +2536,6 @@ body {
 
   #mu-our-leader {
     /* background: #7395AE; */
-    background: linear-gradient(to right, #bdc3c7 0%, #2c3e50 100%); 
     background-repeat: no-repeat;
     background-size: 100%;
     display: inline;
