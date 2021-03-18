@@ -391,6 +391,10 @@ body {
     font-size: 50px;
     line-height: 80px;
     margin-bottom: 10px;
+    background: #01bafd;
+    border-radius: 10px;
+    width: 70%;
+    margin-left: 15%;
   }
   #mu-slider .mu-slider-single .mu-slider-content p {
     font-size: 18px;
@@ -808,6 +812,7 @@ body {
     float: left;
     padding: 100px 0;
     width: 100%;
+
   }
   #mu-our-teacher .mu-our-teacher-area {
     display: inline;
@@ -824,6 +829,15 @@ body {
     display: inline;
     float: left;
     width: 100%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    padding: 5px;
+    background: white;
+    /* background-color: #557A95;
+    color: white;
+    padding:20px;
+    border-radius: 15px;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   }
   #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single:hover .mu-our-teacher-img .mu-our-teacher-social {
     opacity: 1;
@@ -841,6 +855,11 @@ body {
     position: relative;
     float: left;
     width: 100%;
+    height: 300px;
+    text-align: center;
+    background: linear-gradient(
+130deg
+, #01bafd 50%, #f8f8f8 50%);
   }
   #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-our-teacher-img img {
     width: 100%;
@@ -888,6 +907,7 @@ body {
     display: inline;
     float: left;
     width: 100%;
+    height:200px;
   }
   #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-ourteacher-single-content h4 {
     margin-bottom: 0;
@@ -2039,7 +2059,13 @@ body {
     #mu-slider .mu-slider-single .mu-slider-content {
       top: 13%;
     }
+    #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-our-teacher-img{
+      background: linear-gradient(
+        125deg
+        , #01bafd 50%, #f8f8f8 50%);
+    }
   }
+  
   @media (max-width: 991px) {
     #mu-menu .navbar-default .navbar-nav li > a {
       font-size: 15px;
@@ -2054,7 +2080,13 @@ body {
       font-size: 35px;
       line-height: 65px;
       margin-bottom: 0;
+      background: #01bafd;
+      border-radius: 10px;
+      width: 70%;
+      margin-left: 15%;
     }
+  
+   
   
     #mu-slider .mu-slider-single .mu-slider-img {
       height: 400px;
@@ -2198,6 +2230,9 @@ body {
     .navbar-default .navbar-toggle {
       border-color: #01bafd;
     }
+    #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-ourteacher-single-content {
+      height: 150px;
+    }
   
     .navbar-default .navbar-toggle .icon-bar {
       background-color: #fff;
@@ -2214,6 +2249,10 @@ body {
     #mu-slider .mu-slider-single .mu-slider-content h2 {
       font-size: 30px;
       line-height: 60px;
+      background: #01bafd;
+      border-radius: 10px;
+      width: 70%;
+      margin-left: 15%;
     }
   
     #mu-abtus-counter {
@@ -2302,8 +2341,16 @@ body {
     #mu-slider .mu-slider-single .mu-slider-content h2 {
       font-size: 25px;
       line-height: 50px;
+      background: #01bafd;
+      border-radius: 10px;
+      width: 70%;
+      margin-left: 15%;
     }
   
+    #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-ourteacher-single-content {
+      height: 150px;
+    }
+
     #mu-slider .mu-slider-single .mu-slider-img {
       height: 350px;
     }
@@ -2339,6 +2386,11 @@ body {
       margin-top: 3px;
     }
   
+    #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-our-teacher-img{
+      background: linear-gradient(
+        140deg
+        , #01bafd 50%, #f8f8f8 50%);
+    }
     #mu-header .mu-header-area .mu-header-top-left .mu-top-email i {
       margin-right: 0;
     }
@@ -2351,6 +2403,13 @@ body {
     #mu-slider .mu-slider-single .mu-slider-content h2 {
       font-size: 18px;
       line-height: 35px;
+      background: #01bafd;
+      border-radius: 10px;
+      width: 70%;
+      margin-left: 15%;
+    }
+    #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-ourteacher-single-content {
+      height: 150px;
     }
   
     #mu-slider .mu-slider-single .mu-slider-content h4 {
@@ -2453,6 +2512,7 @@ body {
     }
   }
   @media (max-width: 360px) {
+    
     #mu-about-us .mu-about-us-area .mu-about-us-left h2 {
       font-size: 30px;
       margin-bottom: 10px;
@@ -2570,4 +2630,12 @@ body {
     width: 220px;
     height: 220px;
     border-radius: 50%;
+  }
+
+  .imgavatar{
+    border-radius: 50%;
+    vertical-align: middle;
+    width: 180px  !important;
+    height: 180px  !important;
+    margin-top: 15%;
   }
